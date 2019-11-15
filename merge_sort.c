@@ -34,17 +34,18 @@ void m_sort(int a[],int temp[],int left,int right)
 		merge(a,temp,left,center+1,right);
 	}
 }
-void merge_sort(int a[],int n)
+void merge_sort(int a[],int n,int* dummy)
 {
 	int *temp;
 	temp=(int*)malloc(n*sizeof(int));
 	m_sort(a,temp,0,n-1);
 	 
-    printf("erge Sorted Elements are\n");
+     printf("merge Sorted Elements are\n");
     for(int i = 0;i < n; i++)
-        printf("%d\t",a[i]);
+       {    dummy[i] = a[i];
+          printf("%d\t",a[i]);  
+       }
     printf("\n");
-	free(temp);
 }
 
 

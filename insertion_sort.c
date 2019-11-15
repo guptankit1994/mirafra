@@ -2,7 +2,7 @@
 
 
 
-void insertion_sort(int* a,int n)
+void insertion_sort(int* a,int n,int* dummy)
 {
     int i,j,p;
     for(i = 1;i < n;i++)
@@ -19,8 +19,9 @@ void insertion_sort(int* a,int n)
         a[j+1] = p;
 
     }
-    printf("Insertion Sorted Elements are\n");
+     printf("insertion Sorted Elements are\n");
     for(int i = 0;i < n; i++)
-    printf("%d\t",a[i]);
-    printf("\n");
+       {    dummy[i] = a[i];
+          printf("%d\t",dummy[i]);  
+       }
 }

@@ -1,5 +1,5 @@
 #include"header.h"
-void selection_sort(int* a,int n)
+void selection_sort(int* a,int n,int* dummy)
 {
     int i,j,min;
     for(i = 0;i < n-1;i++)
@@ -13,9 +13,11 @@ void selection_sort(int* a,int n)
 		}
         swap(&a[min],&a[i]);
     }
-    printf("Selection Sorted Elements are\n");
+     printf("Selection Sorted Elements are\n");
     for(int i = 0;i < n; i++)
-    printf("%d\t",a[i]);
+       {    dummy[i] = a[i];
+          printf("%d\t",a[i]);  
+       }
     printf("\n");
 }
 
