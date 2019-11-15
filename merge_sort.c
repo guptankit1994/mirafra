@@ -1,32 +1,4 @@
-#include<stdio.h>
-#include<stdlib.h>
-
-void merge_sort(int* a,int n);
-void m_sort(int a[],int temp[],int left,int right);
-void merge (int a[],int temp[],int lpos,int rpos,int rend);
-
-int main(void)
-{   
-    int n;
-    printf("Enter number of elements of an  array\n");
-    scanf("%d",&n);
-    int* a;
-    a = (int*)malloc(sizeof(int)*n);
-    printf("Enter elements of an  array\n");
-    for(int i = 0;i<n;i++)
-    {
-        scanf("%d",&a[i]);
-    }
-    merge_sort(a,n);
-    printf("Sorted Elements are\n");
-    for(int i = 0;i < n; i++)
-        printf("%d\t",a[i]);
-    printf("\n");
-    return 0;
-}
-
-
-
+#include"header.h"
 void merge (int a[],int temp[],int lpos,int rpos,int rend)
 {
 	int i,lend,num,tempos;
@@ -67,6 +39,11 @@ void merge_sort(int a[],int n)
 	int *temp;
 	temp=(int*)malloc(n*sizeof(int));
 	m_sort(a,temp,0,n-1);
+	 
+    printf("erge Sorted Elements are\n");
+    for(int i = 0;i < n; i++)
+        printf("%d\t",a[i]);
+    printf("\n");
 	free(temp);
 }
 
