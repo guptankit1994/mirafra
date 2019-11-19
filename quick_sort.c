@@ -1,14 +1,17 @@
 #include"header.h"
-void quick_sort(int a[],int n,int* dummy)
+void quick_sort(int a[],int n,FILE* fp_w)
 { 
 	q_sort(a,0,n-1);
-     
+
+    fprintf(fp_w,"%d\n",n);  
     printf("Quick Sorted Elements are\n");
     for(int i = 0;i < n; i++)
-       {    dummy[i] = a[i];
-          printf("%d\t",a[i]);  
+       {  printf("%d\t",a[i]);
+          fprintf(fp_w,"%d\t",a[i]);  
        }
     printf("\n");
+    fprintf(fp_w,"\n");
+   
 }
 
 

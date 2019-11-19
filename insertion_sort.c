@@ -2,7 +2,7 @@
 
 
 
-void insertion_sort(int* a,int n,int* dummy)
+void insertion_sort(int* a,int n,FILE* fp_w)
 {
     int i,j,p;
     for(i = 1;i < n;i++)
@@ -19,9 +19,14 @@ void insertion_sort(int* a,int n,int* dummy)
         a[j+1] = p;
 
     }
+
+    fprintf(fp_w,"%d\n",n);  
      printf("insertion Sorted Elements are\n");
     for(int i = 0;i < n; i++)
-       {    dummy[i] = a[i];
-          printf("%d\t",dummy[i]);  
+       {    
+          printf("%d\t",a[i]);  
+          fprintf(fp_w,"%d\t",a[i]);  
        }
+    fprintf(fp_w,"\n");
+   
 }

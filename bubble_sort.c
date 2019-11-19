@@ -1,5 +1,5 @@
 #include"header.h"
-void bubble_sort(int* a,int n,int *dummy)
+void bubble_sort(int* a,int n,FILE* fp_w)
 {
     int i,j;
     for(i = 1;i < n;i++)
@@ -13,14 +13,17 @@ void bubble_sort(int* a,int n,int *dummy)
      
 
     }
+
+    fprintf(fp_w,"%d\n",n);                       
      printf("Bubble Sorted Elements are\n");
     for(int i = 0;i < n; i++)
-       {    dummy[i] = a[i];
-          printf("%d\t",a[i]);
-         
+       { printf("%d\t",a[i]); 
+        fprintf(fp_w,"%d\t",a[i]);         
          
        }
+       fprintf(fp_w,"\n");
     printf("\n");
+  
 }
 
 void swap(int *a,int* b)
